@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Historial de Equipo - Torre Navarrete</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f4f6f9; color: #333; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); max-width: 600px; margin: auto; }
+        h1 { color: #0288D1; font-size: 22px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Historial de Mantenimiento</h1>
+        <p><strong>Equipo consultado:</strong> <span id="nombreEquipo">Cargando...</span></p>
+        <div id="detalles"></div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const equipo = urlParams.get('equipo');
+        if (equipo) {
+            document.getElementById('nombreEquipo').innerText = equipo;
+        } else {
+            document.getElementById('nombreEquipo').innerText = "No se especificó ningún equipo.";
+        }
+    </script>
+</body>
+</html>
